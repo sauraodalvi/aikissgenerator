@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Kiss Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1>AI Kiss/Puchiee 😘 Generator</h1>
-        <button id="generateKissBtn">Generate Kiss</button>
-        <p id="kissMessage"></p>
-        <div id="gifContainer">
-            <!-- Set the default GIF here -->
-            <img id="kissGif" src="0.gif" alt="Kiss GIF">
-        </div>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+<div class="container mx-auto max-w-md p-8 flex-grow">
+
+    <h1 class="text-3xl font-semibold text-center mb-6">AI Kiss/Puchiee 😘 Generator</h1>
+
+    <button id="generateKissBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full block mx-auto mb-6">Generate Kiss</button>
+    
+    <p id="kissMessage" class="text-lg mb-4"></p>
+    
+    <div id="gifContainer" class="w-48 h-48 rounded-full border-4 border-black mx-auto mb-6 overflow-hidden">
+        <!-- Set the default GIF here -->
+        <img id="kissGif" src="0.gif" alt="Kiss GIF" class="w-full h-full object-cover" />
     </div>
 
-    <footer>
-        <p>Made by <a href="https://www.instagram.com/sauraodalvi/">me</a> after watching this <a href="https://www.instagram.com/reel/C3xaisPJVb7/?utm_source=ig_web_copy_link">Reel!</a>
-        </p>
-    </footer>
+</div>
 
-    <script src="script.js"></script>
+<footer class="bg-gray-600 text-white text-center py-4">
+    Made by <a href="https://www.instagram.com/sauraodalvi/" class="underline">me</a> after watching this <a href="https://www.instagram.com/reel/C3xaisPJVb7/?utm_source=ig_web_copy_link" class="underline">Reel!</a>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
