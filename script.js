@@ -1,3 +1,6 @@
+// Define global variable to keep track of the current GIF index
+let currentGifIndex = 0;
+
 // Function to generate a random kiss message using a simple AI
 function generateKiss() {
     // AI-generated kiss messages
@@ -42,26 +45,20 @@ function generateKiss() {
         "17.gif"
     ];
 
-    // Check if gifFilenames array is empty or undefined
-    if (!gifFilenames || gifFilenames.length === 0) {
-        console.error("No GIF filenames found.");
-        return;
-    }
+ // Get the kiss message and GIF filename corresponding to the current index
+ const kissMessage = aiKisses[currentGifIndex];
+ const gifFilename = gifFilenames[currentGifIndex];
+ const gifURL = `GIF/${gifFilename}`;
 
-    // Generate a random index within the bounds of gifFilenames array
-    const randomIndex = Math.floor(Math.random() * gifFilenames.length);
-    
-    // Get the kiss message and GIF filename corresponding to the random index
-    const kissMessage = aiKisses[randomIndex];
-    const gifFilename = gifFilenames[randomIndex];
-    const gifURL = `GIF/${gifFilename}`;
+ // Display the kiss message
+ document.getElementById("kissMessage").textContent = kissMessage;
 
-    // Display the kiss message
-    document.getElementById("kissMessage").textContent = kissMessage;
+ // Display GIF corresponding to the kiss message
+ const gifContainer = document.getElementById("gifContainer");
+ document.getElementById("kissGif").src = gifURL;
 
-    // Display GIF corresponding to the kiss message
-    const gifContainer = document.getElementById("gifContainer");
-    document.getElementById("kissGif").src = gifURL;
+ // Increment the current GIF index
+ currentGifIndex = (currentGifIndex + 1) % gifFilenames.length;
 }
 
 // Call generateKiss function when the page loads to display the default GIF
